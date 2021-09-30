@@ -1,0 +1,502 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+
+.header {
+    height: 100vh;
+    width: 100%;
+    background-color: beige;
+        }
+
+.header2 {
+    background-color: beige;
+    width: 100%;
+    height: 23%;
+        }
+
+.header3 {
+    height: 130vh;
+    width: 100%;
+    background-color: beige;
+}
+
+.navbar {
+    width: 100%;
+    background-color: white;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    height: 20%;
+    z-index: 1;
+    flex-wrap: wrap;
+        }
+
+.cont-imagg {
+    height: 100%;
+    width: 15%;
+}
+
+.imagen-1 {
+    height: 100%;
+    width: 100%;
+            } 
+
+.ul-nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 65%;
+    height: 20%;
+    flex-wrap: wrap;
+        }
+
+.li-nav a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 80ms ease-in;
+            }
+
+.li-nav a:hover {
+    color: lightslategrey;
+    border-bottom: lightslategrey solid 2px;
+                }
+
+.ig {
+    font-size: 40px;
+    color: salmon;
+    }
+
+.fb {
+    font-size: 40px;
+    color: salmon;
+    }
+
+.section {
+    background-color: burlywood;
+    width: 100%;
+    height: 140vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section h4 {
+    font-family: 'Rampart One', cursive;
+    font-size: 2.5rem;  
+    opacity: 0;
+}
+
+.contenedor {
+    position: relative;
+    width: 40%;
+    height: 45%;
+    margin: 10px 40px;
+    display: flex;
+    align-items: center;
+
+}
+
+/* El "overflow: hidden" es para cuando le hago el efecto de agrandar la imagen que no se salga del contenedor padre */
+.cont-imag {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.cont-titulo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.imag {
+    width: 100%;
+    height: 100%;
+}
+
+/* "filter: blur" hace que la imagen se vea borrosa */
+.cont-imag:hover .imag {
+    filter: blur(2.5px);
+    transform: scale(1.5);
+    transition: all 1.5s ease;
+    cursor: pointer;
+}
+
+.cont-titulo::before {
+    content: "";
+    width: 80%;
+    left: 100%;
+    height: 2px;
+    top: 30%;
+    position: absolute;
+    background-color: black;
+    transition: all 2s;
+    opacity: 0;
+}
+
+.cont-titulo::after {
+    content: "";
+    width: 80%;
+    right: 100%;
+    height: 2px;
+    bottom: 30%;
+    position: absolute;
+    background-color: black;
+    transition: all 2s;
+    opacity: 0;
+}
+
+.cont-titulo:hover::before {
+    opacity: 1;
+    left: 20px;
+}
+
+.cont-titulo:hover::after {
+    opacity: 1;
+    right: 20px;
+}
+
+.cont-titulo:hover h4 {
+    opacity: 1;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.cont-titulo:hover {
+    cursor: pointer;
+}
+
+.contenedor h4 {
+    color: black;
+}
+
+.footer {
+    width: 100%;
+    height: 40vh;
+    background-color: coral ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer h4 {
+    color: white;
+}
+
+.cont-nav-foot {
+    padding-left: 30px;
+    width: 25%;
+}
+
+.ul-nav-foot {
+    list-style: none;
+    padding-left: 0;
+}
+
+.li-nav-foot a {
+    text-decoration: none;
+    color: white;
+    transition: all 80ms ease;
+}
+
+.li-nav-foot a:hover {
+    color: sienna;
+    border-bottom: sienna solid 2px;
+}
+
+.cont-redsol {
+    padding-left: 30px;
+    padding-bottom: 100px;
+    width: 25%;
+}
+
+.ig2 {
+    font-size: 50px;
+    color: white;
+}
+
+.fb2 {
+    font-size: 50px;
+    color: white;
+}
+
+.cont-med-pag {
+    width: 25%;
+    padding-bottom: 60px;
+}
+
+.li-mepa-foot {
+    color: white;
+}
+
+.cont-for-env {
+    width: 25%;
+    padding-bottom: 60px;
+}
+
+.tit-pol {
+    padding-top: 160px;
+    padding-left: 40px;
+}
+
+.tit2 {
+    margin-top: 40px;
+    padding-left: 40px;
+}
+
+.ul-pol {
+    padding-left: 80px;
+}
+
+.tit3{
+    padding-left: 40px;
+}
+
+.p1 {
+    padding-left: 40px;
+}
+
+
+
+@media (max-width:1300px) and (min-width:800px) {
+    .footer {
+        height: 50vh;
+    }
+
+    .cont-nav-foot {
+        margin-top: 35px;
+    }
+
+    .header3 {
+        height: 160vh;
+    }
+}
+
+
+@media (max-width: 1200px) and (min-width: 800px) {
+    .navbar {
+        width: 100%;
+        height: 20%;
+    }
+
+    .cont-imagg {
+        width: 20%;
+        height: 100%;
+
+    }
+
+    .ul-nav {
+        width: 80%;
+        margin-top: 10px;
+    }
+
+}
+
+
+@media (max-width: 950px) and (min-width: 500px) {
+    .li-nav a {
+        margin-left: 6px;
+    }
+
+    .ul-nav {
+        width: 70%;
+    }
+
+    .cont-imagg {
+        width: 30%;
+    }
+
+
+}
+
+
+@media (max-width: 800px) and (min-width: 500px) {
+    .section {
+        height: 250vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .contenedor {
+        height: 30%;
+        width: 30%;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer {
+        height: 80vh;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .header3 {
+        height: 200vh;
+    }
+
+}
+
+@media (max-width: 635px) and (min-width:500px) {
+    .cont-nav-foot {
+        width: 45%;
+        height: 40%;
+        margin-top: 40px;
+    }
+
+    .cont-redsol {
+        width: 45%;
+        height: 40%; 
+        margin-top: 50px;
+    }
+
+    .cont-med-pag {
+        width: 45%;
+        height: 40%;
+    }
+
+    .cont-for-env {
+        width: 45%;
+        height: 40%;
+    }
+}
+
+@media (max-width: 520px) {
+    .header3 {
+        height: 300vh;
+        
+    }
+
+
+}
+
+@media (max-width: 590px) and (min-width:500px) {
+    .navbar{
+        height: 24%;
+    }
+}
+
+@media (max-width: 500px)  {
+    .navbar {
+        width: 100%;
+        flex-direction: column;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .cont-imagg {
+        width: 70%;
+        height: 25%;
+    }
+
+    .ul-nav {
+        flex-direction: column;
+        width: 100%;
+        height: 65%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .li-nav {
+        margin-top: 20px;
+    }
+    
+    .section {
+        height: 150vh;
+        width: 100%;
+    }
+
+    .contenedor {
+        width: 90%;
+        height: 250px;
+    }
+
+    .cont-imag {
+        width: 100%;
+        height: 100%;
+    }
+
+    .contenedor h4 {
+        font-size: 1.2rem;
+    }
+
+    .footer {
+        height: 120vh;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .cont-nav-foot {
+        width: 80%;
+        height: 20%;
+        margin-bottom: 40px;
+    }
+
+    .cont-redsol {
+        width: 80%;
+        height: 20%;
+        margin-top: 70px;
+    }
+
+    .cont-med-pag {
+        width: 80%;
+        height: 20%; 
+    }
+
+    .cont-for-env {
+        width: 80%;
+        height: 20%;
+    }
+
+    .container {
+        padding-top: 280px;
+    }
+
+
+}
+
+@media (max-width: 470px) {
+    .header3 {
+        height: 340vh;
+    }
+}
+
+@media (max-width: 372px) {
+    .header3 {
+        height: 380vh;
+    }
+}
+
+@media (max-width: 330px) {
+    .navbar {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 289px) {
+    .header3 {
+        height: 430vh;
+    }
+}
