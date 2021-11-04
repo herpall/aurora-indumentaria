@@ -532,6 +532,9 @@
         padding-top: 280px;
     }
 
+    .sec {
+        padding-top: 50px;
+    }
 
 }
 
@@ -544,6 +547,10 @@
 @media (max-width: 372px) {
     .header3 {
         height: 380vh;
+    }
+
+    .sec {
+        padding-top: 80px;
     }
 }
 
