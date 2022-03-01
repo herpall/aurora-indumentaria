@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurora.Ind - Contacto</title>
@@ -16,33 +17,49 @@
     </div>
     
     <ul class="ul-nav">
-    <li class="li-nav"> <a href="index.html">INICIO</a></li>
-    <li class="li-nav"><a href="maxibuzos.html"> MAXIBUZOS</a></li>
-    <li class="li-nav"><a href="pants.html">PANTS</a></li>
-    <li class="li-nav"><a href="remerones.html">REMERONES</a></li>
-    <li class="li-nav active"> <a href="contacto.html">CONTACTO </a></li>
-    <li class="li-nav"><a href="politicas.html">POLITICAS DE CAMBIO Y DEVOLUCIONES</a></li>
-    </ul>
+        <li class="li-nav"> <a href="index.html">INICIO</a></li>
+        <li class="li-nav"><a href="">PRODUCTOS</a>
+            <ul class="ul2">
+                <li class="li-ul2"><a href="maxibuzos.html"> MAXIBUZOS</a></li>
+                <li class="li-ul2"><a href="pants.html">PANTS</a></li>
+                <li class="li-ul2"><a href="remerones.html">REMERONES</a></li>
+            </ul>
+        </li>
+        <li class="li-nav"> <a href="contacto.html">CONTACTO </a></li>
+        <li class="li-nav"><a href="politicas.html">POLITICAS DE CAMBIO Y DEVOLUCIONES</a></li>
+        <li class="li-nav"><a href="carrito.html">CARRITO</a></li>
+    </ul> 
     
     </nav>
 </header>  
 
-<section class="mt-5 mb-5 sec">
-    <div class="container col-6">
-        <h2>Comprar porducto</h2>
-        <p>El producto se puede comprar a través de Mercado pago, con el siguiente numero o mail:</p>
-        <i class="fas fa-phone-alt">1125620403</i>
-        <br>
-        
-        <i class="fas fa-envelope mail">Evelyn.rovira@hotmail.com</i>
-        <hr>
-        <div>
-            <h4>Tambien podés pedir tu producto a traves de Facebook o Instagram</h4>
-        <a href="https://www.instagram.com/aurora.indumentari/" target="blank"><i class="fab fa-instagram ig"></i></a>
-        <a href="https://www.facebook.com/auroraindumentari-232878381475544" target="blank"><i class="fab fa-facebook-square fb"></i></a> 
-        </div>
-    </div> 
-    
+<section class="carrito">
+    <table class="table">
+        <thead>
+          <tr class="">
+            <th scope="col">#</th>
+            <th scope="col">Productos</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          
+            
+            
+          
+        </tbody>
+      </table>
+      <br><br>
+      <div class="row mx-4">
+          <div class="col">
+              <h3 class="itemCartTotal text">Total: 0</h3>
+          </div>
+      
+           <div class="col d-flex justify-content-end">
+               <button class="btn btn-success">COMPRAR</button>
+           </div>
+       </div>
 </section>
 
 <footer class="footer">
@@ -54,6 +71,7 @@
             <li class="li-nav-foot"><a href="maxibuzos.html"> MAXIBUZOS</a></li>
             <li class="li-nav-foot"><a href="pants.html">PANTS</a></li>
             <li class="li-nav-foot"><a href="remerones.html">REMERONES</a></li>
+            <li class="li-nav-foot"><a href="carrito.html">CARRITO</a></li>
             <li class="li-nav-foot"> <a href="contacto.html">CONTACTO </a></li>
             <li class="li-nav-foot"><a href="politicas.html">POLITICAS DE CAMBIO Y DEVOLUCIONES</a></li>
         </ul>
@@ -85,7 +103,8 @@
      
 </footer>
 
-
+    
     <script src="./bootstrap-5.1.0-dist/js/bootstrap.bundle.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
