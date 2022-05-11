@@ -10,7 +10,7 @@ const clickButton = document.querySelectorAll('.button')
 clickButton.forEach(btn => {
     btn.addEventListener('click', addToCarritoItem)
 })
-
+ 
 renderCarrito();
 
 function addToCarritoItem(e) {
@@ -33,26 +33,30 @@ function addToCarritoItem(e) {
 }
 
 function addItemCarrito(newItem) {
+    let productoNuevo = true;
 
-    const inputElemento = document.getElementsByClassName('input__elemento');
-
-    for(let i = 0; i < carrito.length; i++) {
+    for (let i = 0; i < carrito.length; i++) {
         if (carrito[i].title.trim() === newItem.title.trim()) {
-            carrito[i].cantidad++;
-            const inputValue = inputElemento[i]
-            inputValue.value++;
-            console.log(carrito)
-            return null
-        }
-    }   
+            productoNuevo = false; // El producto ya estaba en el carrito
 
-    carrito.push(newItem)
+            carrito[i].cantidad++;
+            console.log(carrito)
+            break;
+        }
+    } 
+
+
+    // Si el producto es nuevo, lo agrego al carrito
+    if (productoNuevo == true) {
+        carrito.push(newItem)
+    }
 
     // GUardas el carrito en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
     renderCarrito()
 }
+
 
 // Cuando voy a iniciar a renderizarlo que este vacio el tbody por eso las comillas vacias
 // Creamos el elemento tr y luego le colocamos una clase
@@ -69,7 +73,7 @@ function renderCarrito() {
 
         const content = `
         
-            <th scope="row">1</th>
+            <th scope="row"></th>
             <td class="table__productos">
                 <img src=${item.img} alt="">
                 <h6 class="tittle">${item.title}</h6>
@@ -85,5 +89,11 @@ function renderCarrito() {
         tr.innerHTML = content
         
         tbody.append(tr)
+
+        
+        
     })
+
+
 }
+
