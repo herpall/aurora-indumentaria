@@ -23,6 +23,12 @@
     background-color: beige;
 }
 
+.header4 {
+    height: 30vh;
+    width: 100%;
+    background-color: white;
+}
+
 .navbar {
     width: 100%;
     background-color: white;
@@ -45,6 +51,14 @@
     height: 20%;
     z-index: 1;
     flex-wrap: wrap;
+}
+
+.conte {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .cont-imagg {
@@ -72,7 +86,7 @@
     width: 120px;
     display: flex;
     flex-direction: column;
-    background-color: rgba(211, 195, 195, 0.384);
+    background-color: rgba(44, 42, 42, 0.384);
     box-shadow: (0,0,0,0.5);
     position: absolute;
     margin-top: 14px;
@@ -156,6 +170,14 @@
 .section2{
     padding-top: 90px;
 
+}
+
+.section3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .section h4 {

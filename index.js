@@ -1,8 +1,9 @@
 let carrito = JSON.parse(localStorage.getItem('carrito'))
-
 if (carrito == null) {
     carrito = [];
 }
+
+
 
 const tbody = document.querySelector('.tbody')
 
@@ -36,8 +37,8 @@ function addItemCarrito(newItem) {
     let productoNuevo = true;
 
     for (let i = 0; i < carrito.length; i++) {
-        if (carrito[i].title.trim() === newItem.title.trim()) {
-            productoNuevo = false; // El producto ya estaba en el carrito
+        if (carrito[i].title.trim() = newItem.title.trim()) {
+            productoNuevo === false; // El producto ya estaba en el carrito
 
             carrito[i].cantidad++;
             console.log(carrito)
@@ -47,19 +48,18 @@ function addItemCarrito(newItem) {
 
 
     // Si el producto es nuevo, lo agrego al carrito
-    if (productoNuevo == true) {
+    if (productoNuevo === true) {
         carrito.push(newItem)
+        
     }
 
-    // GUardas el carrito en localStorage
-    localStorage.setItem('carrito', JSON.stringify(carrito))
-
     renderCarrito()
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+    
+
 }
 
 
-// Cuando voy a iniciar a renderizarlo que este vacio el tbody por eso las comillas vacias
-// Creamos el elemento tr y luego le colocamos una clase
 function renderCarrito() {
     if (tbody == null) {
         return
@@ -90,10 +90,69 @@ function renderCarrito() {
         
         tbody.append(tr)
 
-        
+        tr.querySelector('.delete').addEventListener('click', removeItemCarrito)
+        tr.querySelector('.input__elemento').addEventListener('change', sumaCantidad)
         
     })
 
+    carritoTotal () 
+    
+}
 
+function carritoTotal () {
+    let Total = 0
+    let itemTotalCart = document.querySelector('.itemCartTotal')
+    carrito.forEach((item) => {
+        const precio = Number(item.precio.replace("$", ""))
+        Total = Total + precio*item.cantidad
+    })
+
+    itemTotalCart.innerHTML = `Total $${Total}`
+
+    const compra = document.querySelector(".btn-compra")
+
+    compra.addEventListener('click', finalizacion)
+
+    function finalizacion () {
+        if (carrito === "") {
+            alert("No hay productos seleccionados")
+        } else {
+        alert('Gracias por su compra!');
+        tbody.remove();
+        itemTotalCart.innerHTML = `Total $0`;
+        
+        }
+    }
+    
+}
+
+
+
+function removeItemCarrito (e) {
+    buttonDelete = e.target
+    const tr = buttonDelete.closest('.itemCarrito')
+    const title = tr.querySelector('.tittle').textContent
+
+    for(i = 0; i<carrito.length; i++) {
+        if(carrito[i].title.trim() === title.trim()) {
+            carrito.splice(i, 1)
+        }
+    }
+    tr.remove()
+    carritoTotal () 
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+}
+
+function sumaCantidad (e) {
+    const sumaInput = e.target
+    const tr = sumaInput.closest('.itemCarrito')
+    const title = tr.querySelector('.tittle').textContent
+    carrito.forEach(item => {
+        if(item.title.trim() === title) {
+            sumaInput.value < 1 ? (sumaInput.value = 1) : sumaInput.value;
+            item.cantidad = sumaInput.value;
+            carritoTotal()
+        }
+    })
 }
 
