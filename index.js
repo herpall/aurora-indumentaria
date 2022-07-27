@@ -37,7 +37,7 @@ function addItemCarrito(newItem) {
     let productoNuevo = true;
 
     for (let i = 0; i < carrito.length; i++) {
-        if (carrito[i].title.trim() = newItem.title.trim()) {
+        if (carrito[i].title.trim() == newItem.title.trim()) {
             productoNuevo === false; // El producto ya estaba en el carrito
 
             carrito[i].cantidad++;
@@ -46,17 +46,13 @@ function addItemCarrito(newItem) {
         }
     } 
 
-
     // Si el producto es nuevo, lo agrego al carrito
     if (productoNuevo === true) {
-        carrito.push(newItem)
-        
+        carrito.push(newItem) 
     }
 
     renderCarrito()
-    localStorage.setItem('carrito', JSON.stringify(carrito))
-    
-
+    guardarCarrito()
 }
 
 
@@ -114,19 +110,20 @@ function carritoTotal () {
     compra.addEventListener('click', finalizacion)
 
     function finalizacion () {
-        if (carrito === "") {
+        if (carrito.length == 0) {
             alert("No hay productos seleccionados")
         } else {
-        alert('Gracias por su compra!');
-        tbody.remove();
-        itemTotalCart.innerHTML = `Total $0`;
-        
+            alert('Gracias por su compra!');
+
+            vaciarCarrito();
+            guardarCarrito();
+
+            tbody.remove();
+            itemTotalCart.innerHTML = `Total $0`;
         }
     }
     
 }
-
-
 
 function removeItemCarrito (e) {
     buttonDelete = e.target
@@ -138,9 +135,11 @@ function removeItemCarrito (e) {
             carrito.splice(i, 1)
         }
     }
+    
     tr.remove()
-    carritoTotal () 
-    localStorage.setItem('carrito', JSON.stringify(carrito))
+    
+    carritoTotal() 
+    guardarCarrito()
 }
 
 function sumaCantidad (e) {
@@ -156,3 +155,28 @@ function sumaCantidad (e) {
     })
 }
 
+function vaciarCarrito() {
+    carrito = [];
+}
+
+function guardarCarrito() {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+
+
+let subMenuBtn = document.querySelector(".subMenu");
+let menuChico = document.querySelector(".ul2");
+
+if(screen.width < 500){
+    
+    subMenuBtn.addEventListener('click', ()=>{
+        subMenuBtn.classList.toggle('arrow');
+        let height = 0; 
+        if(menuChico.clientHeight == "0"){
+            height = menuChico.scrollHeight;
+        }
+
+        menuChico.style.height = `${height}px`
+});
+};
