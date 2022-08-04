@@ -170,8 +170,10 @@ let menuChico = document.querySelector(".ul2");
 
 if(screen.width < 500){
     
-    subMenuBtn.addEventListener('click', ()=>{
-        subMenuBtn.classList.toggle('arrow');
+    subMenuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        menuChico.classList.toggle('ul2-visible');
         let height = 0; 
         if(menuChico.clientHeight == "0"){
             height = menuChico.scrollHeight;

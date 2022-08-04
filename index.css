@@ -584,6 +584,7 @@
         height: 65%;
         justify-content: center;
         align-items: center;
+        flex-wrap: nowrap;
     }
 
     .li-nav {
@@ -651,6 +652,7 @@
 
     .ul2 {
         list-style: none;
+        position:absolute;
         width: 120px;
         display: flex;
         flex-direction: column;
@@ -658,11 +660,23 @@
         box-shadow: (0,0,0,0.5);
         margin-left: auto;
         padding: 14px 0px;
-        left: 100%;
+        left: 200%;
         height: 0;
         transition: height 0.4s;
     }
 
+    .ul2-visible{
+        position: relative;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding-bottom: 80px;
+        left: 0;
+        
+    }
+
+    /* .ul2-visible .subMenu {
+        padding-bottom: 150px;
+    } */
 }
 
 @media (max-width: 470px) {
