@@ -165,36 +165,6 @@ function guardarCarrito() {
 
 
 
-// let subMenuBtn = document.querySelector(".subMenu");
-// let menuChico = document.querySelector(".ul2");
-
-// if(screen.width < 500){
-    
-//     subMenuBtn.addEventListener('click', (e) => {
-//         e.preventDefault();
-
-//         menuChico.classList.toggle('ul2-visible');
-//         let height = 0; 
-//         if(menuChico.clientHeight == "0"){
-//             height = menuChico.scrollHeight;
-//         }
-
-//         menuChico.style.height = `${height}px`
-// });
-// };
-
-// let itemsSubMenu = document.querySelectorAll(".ul2 li");
-
-// // Iterar sobre cada elemento y agregar un evento de clic
-// itemsSubMenu.forEach(item => {
-//     item.addEventListener('click', (e) => {
-//         // Obtener la URL de la página a la que se debe redirigir
-//         let url = item.getAttribute('data-url');
-//         // Redirigir a la URL
-//         window.location.href = url;
-//     });
-// });
-
 let subMenuBtn = document.querySelector(".subMenu");
 let menuChico = document.querySelector(".ul2");
 
@@ -224,7 +194,7 @@ let itemsSubMenu = document.querySelectorAll(".ul2 li");
 
 itemsSubMenu.forEach(item => {
     item.addEventListener('click', (e) => {
-        e.preventDefault(); // Evita que la página se desplace hacia arriba
+        e.preventDefault(); 
         let url = item.querySelector('a').getAttribute('href');
         window.location.href = url;
     });
